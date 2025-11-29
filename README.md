@@ -13,10 +13,16 @@ GPU-assisted CLI for turning a folder of WAVs plus cover art into a single, YouT
 - ffmpeg on your `PATH` **built with NVENC** support.
 - NVIDIA GPU + drivers supporting `h264_nvenc`.
 - Source folder containing WAV files and a cover image (default `cover.png`).
+- Python deps: standard library only (`pip install -r requirements.txt` is a no-op).
 
 Check NVENC availability:
 - Windows PowerShell: `ffmpeg -hide_banner -encoders | Select-String nvenc`
 - macOS/Linux: `ffmpeg -hide_banner -encoders | grep nvenc`
+
+## Install ffmpeg with NVENC (concise)
+- Windows: download an NVENC-enabled build (e.g., Gyan.dev “full” or BtbN), unzip, add `bin` to `PATH`.
+- macOS/Linux: use a build that lists `h264_nvenc` in `ffmpeg -encoders` (BtbN static builds work; distro packages vary).
+- Verify: `ffmpeg -hide_banner -encoders | Select-String nvenc` (PowerShell) or `... | grep nvenc`.
 
 ## Quick start
 ```bash
@@ -64,6 +70,7 @@ python render_album.py --input PATH [--cover COVER.PNG] [--pattern "*.wav"] [--o
 - To tweak quality/bitrate, adjust the `render_video` NVENC parameters in `render_album.py`.
 
 ## Development
+- Install Python requirements: `pip install -r requirements.txt` (no third-party libs; stdlib only).
 - Single-file script: `render_album.py`
 - License: MIT (see `LICENSE`)
 

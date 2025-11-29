@@ -1,0 +1,2 @@
+# No third-party Python dependencies; script uses the standard library.
+# External: ffmpeg with NVENC available on PATH, NVIDIA GPU/driver.
