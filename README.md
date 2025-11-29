@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="Swordfish Album Builder" width="420">
+</p>
+
 # Swordfish Album Builder
 
 GPU-assisted CLI for turning a folder of WAVs plus cover art into a single, YouTube-ready cover video. Audio is normalized to 24-bit/48 kHz FLAC, concatenated, and paired with your static cover image while ffmpeg encodes video via NVIDIA NVENC.
